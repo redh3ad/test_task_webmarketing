@@ -1,1 +1,167 @@
-// init project
+// nulling styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// variables
+$page-font: 'Roboto', sans-serif;
+$body-bg: #d9d9d9;
+$section-bg: #fff;
+$h1-fontsize: 1.375rem;
+$nav-link-color: #bdbdbd;
+
+//mixins
+@mixin wrap($mwidth) {
+  max-width: $mwidth;
+}
+
+@mixin headerCont($bg, $pY, $pX, $jc, $mb) {
+  background-color: $bg;
+  padding: $pY $pX;
+  display: flex;
+  justify-content: $jc;
+  margin-bottom: $mb;
+}
+
+//styles
+html {
+  font-size: 16px;
+
+  body {
+    background-color: $body-bg;
+    font-family: $page-font;
+    .wrapper {
+      @include wrap(1440px);
+      margin: 0 auto;
+      .container {
+        @include wrap(1140px);
+        margin: 0 auto;
+      }
+    }
+    h1 {
+      font-size: $h1-fontsize;
+      font-weight: 700;
+    }
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+    a {
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 400;
+      & + a {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.header {
+  padding: 10px 0;
+  .container__title {
+    margin: 0 auto;
+    @include headerCont($section-bg, 20px, 30px, center, 10px);
+    @include wrap(1140px);
+    min-height: 66.5px;
+  }
+  .container__links {
+    margin: 0 auto;
+    @include headerCont($section-bg, 20px, 30px, flex-start, 0px);
+    @include wrap(1140px);
+    min-height: 59px;
+    a {
+      color: $nav-link-color;
+      transition: all 0.3s ease;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+}
+
+.main {
+  .container__main {
+    display: flex;
+    @include wrap(1140px);
+    margin: 0 auto;
+    .main__aside {
+      background-color: $section-bg;
+      padding: 10px 20px;
+      width: 20%;
+      min-height: 400px;
+      margin-right: 15px;
+    }
+
+    .main__content {
+      width: 80%;
+      .main__items {
+        display: flex;
+        flex-direction: column;
+        .main__item {
+          position: relative;
+          display: flex;
+          padding: 16px;
+          background-color: $section-bg;
+          &:hover {
+            cursor: pointer;
+          }
+          &:not(:last-child) {
+            margin-bottom: 15px;
+          }
+          img {
+            display: block;
+            width: 224px;
+            height: 168px;
+            margin-right: 16px;
+            transition: all 0.4s ease;
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+          .main__item-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            p {
+              max-width: 500px;
+              font-size: 0.875rem;
+              line-height: 1.2rem;
+              color: $nav-link-color;
+            }
+            .item__price {
+              display: block;
+              font-size: 1rem;
+              position: absolute;
+              top: 16px;
+              right: 16px;
+            }
+            .item_props {
+              display: flex;
+              span {
+                & + span {
+                  margin-left: 5px;
+                }
+                display: block;
+                color: $section-bg;
+                background-color: $nav-link-color;
+                padding: 2px 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  .container__footer {
+    margin: 0 auto;
+    @include headerCont($section-bg, 20px, 30px, flex-start, 10px);
+    @include wrap(1140px);
+    margin-top: 10px;
+  }
+}
