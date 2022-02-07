@@ -5,7 +5,7 @@ export default function pageItemsBuilder(dataset) {
     const mainItem = document.createElement('div');
     mainItem.classList.add('main__item');
     mainItem.innerHTML = `
-    <img src="./assets/images/${car['image']}" alt="post image" />
+    <img src="./${car['image']}" alt="post image" />
     <div class="main__item-content">
       <h3>
         ${car['title']}
