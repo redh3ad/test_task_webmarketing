@@ -5,7 +5,7 @@
 ### Stack:
   - `HTML`
   - `CSS/SCSS`
-  - `JavaScript'
+  - `JavaScript`
   - `Webpack`
 -------------------------------
 ## Author: Egor Matyas
