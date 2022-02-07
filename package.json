@@ -1,0 +1,32 @@
+{
+  "name": "empty_project",
+  "version": "0.0.0",
+  "description": "Empty project template",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack serve --env development",
+    "lint": "eslint src"
+  },
+  "author": "Egor Matyas",
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^8.1.1",
+    "css-loader": "^5.2.7",
+    "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-webpack-plugin": "^2.6.0",
+    "html-loader": "^3.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^1.6.2",
+    "sass": "^1.45.2",
+    "sass-loader": "^11.1.1",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
